@@ -25,14 +25,6 @@ const customConfig = {
   }
 };
 
-const cssRule = environment.loaders.get('css')
-const cssLoader = cssRule.use.find(loader => loader.loader === 'css-loader')
-
-cssLoader.options = Object.assign(cssLoader.options, {
-  modules: true,
-  localIdentName: '[path][name]__[local]--[hash:base64:5]'
-})
-
 environment.config.delete('node.dgram')
 environment.config.delete('node.fs')
 environment.config.delete('node.net')
